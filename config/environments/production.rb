@@ -1,6 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  ENV['USERNAME'] = 'eshop_prod'
+  ENV['PASSWORD'] = 'password'
   # Code is not reloaded between requests.
   config.cache_classes = true
 

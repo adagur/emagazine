@@ -8,6 +8,10 @@ default: &default
   adapter: postgresql
   pool: 5
   timeout: 5000
+  encoding: unicode
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
+  host: <%= ENV['IP'] %>
 
 development:
   <<: *default
@@ -18,8 +22,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.eshop_dev
+  database: db/test.eshop_test
 
 production:
   <<: *default
-  database: db/production.eshop_dev
+  database: db/production.eshop_prod

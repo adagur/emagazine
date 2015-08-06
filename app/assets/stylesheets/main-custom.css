@@ -1,0 +1,9 @@
+#loginModal {
+	top: 5%;
+}
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: auto;
+      height: auto;
+      margin: auto;
+}

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>eShop.com</title>
+        <title>M&S e-Magazine</title>
+		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <%= favicon_link_tag 'favicon.ico.png' %>
 		<!-- <link rel="shortcut icon" type="image/x-icon" href="/assets/images/mads.ico">
         <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
         <link href="/assets/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -37,10 +38,10 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="welcome">Home</a></li>
 					<li><a href="aboutUs"><b>About Us</b></a></li>
-                    <li><a href="clothing"><b>Shop for clothing</b></a></li>
-					<li><a href="footwears"><b>Shop for footwears</b></a></li>
-                    <li><a href="hats"><b>Shop for hats</b></a></li>
-                    <li><a href="storePickup"><b>store pick up products</b></a></li>
+                    <li><a href="emagazine"><b>Our Luggage Story</b></a></li>
+					<li><a href="footwears"><b>Our Furniture Story</b></a></li>
+                    <li><a href="hats"><b>Our Footwears Story</b></a></li>
+                    <li><a href="storePickup"><b>Our most loved food</b></a></li>
                     <li><a href="contactUs"><b>Contact Us</b></a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
@@ -50,6 +51,44 @@
 			</div>
 		</div>
 	</nav>
+	<div id="magazineCarousal" class="carousel slide" data-ride="carousel">
+  		<!-- Indicators -->
+  		<ol class="carousel-indicators">
+		    <li data-target="#magazineCarousal" data-slide-to="0" class="active"></li>
+		    <li data-target="#magazineCarousal" data-slide-to="1"></li>
+		    <li data-target="#magazineCarousal" data-slide-to="2"></li>
+			<li data-target="#magazineCarousal" data-slide-to="3"></li>
+		</ol>
+
+  		<!-- Wrapper for slides -->
+  		<div class="carousel-inner" role="listbox">
+		    <div class="item active">
+		      <%= image_tag("M&S_mainImage.png", alt: "M&S Dress") %>
+		    </div>
+		
+		    <div class="item">
+		      <%= image_tag("M&S_secPage.png", alt: "M&S Dress") %>
+		    </div>
+
+		    <div class="item">
+		      <%= image_tag("M&S_thrPage.png", alt: "M&S Dress") %>
+		    </div>
+
+			<div class="item">
+				<%= image_tag("M&S_fourPage.png", alt: "M&S Dress") %>
+			</div>
+  		</div>
+
+		<!-- Left and right controls -->
+  		<a class="left carousel-control" href="#magazineCarousal" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#magazineCarousal" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
 	<!-- Modal -->
 	<div id="loginModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">

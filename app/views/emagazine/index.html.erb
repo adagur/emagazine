@@ -1,56 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>M&S e-Magazine</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= favicon_link_tag 'favicon.ico.png' %>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <%= stylesheet_link_tag "application", media: "all" %>
-    <%= javascript_include_tag "application" %>
-  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-</head>
-<body>
-
-<div class="container-fluid">
-    <h1>M&S e-Magazine</h1>
-    <h2 class="text-center">LUGGAGE & TRAVEL</h2>
-    <div class="row">
-        <div class="col-lg-6">
-            <a href="http://www.marksandspencer.com/scorpion-4-wheel-medium-suitcases/p/p22374300" >
-                <%= image_tag("suitcase1.jpg", class: "img-responsive") %>
-                <map name="Map" id="Map">
-                  <area shape="rect" coords="356,115,624,186" href="http://www.marksandspencer.com/scorpion-4-wheel-medium-suitcases/p/p22374300" alt="Shop now" />
-                </map>
-            </a>
-        </div>
-        <div class="col-lg-6">
-            <h3>Scorpion 4 Wheel Large Suitcase</h3>
-            <h5><p>Travel in style with our selection of luggage and travel accessories, 
-                from sleek suitcases and rollercases to elegant leather holdalls for weekends away.</p>
-                <br>
-                Features:
-                <br>It comes with 4 wheel rotation for ease of movement.
-                100% plastic.
-                Lining- 100% polyester.
-                Easy to wipe clean.
-                Zipped internal compartments.
-                Also available in Large and Medium.
-                Main body compartment is complete with PACKING STRAPS to keep your clothes secure whilst on the move
-                This luggage is guaranteed for 5 years against faulty workmanship.
-                <br>
-                Notes:
-                <br>Every airline has different guidelines on luggage size allowances 
-                so please check with individual airlines for their regulations before travelling.
-                This isn't expandable.
-            </h5>
+<html>
+    <head>
+        <title>M&S e-Magazine</title>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <%= favicon_link_tag 'favicon.ico.png' %>
+		<!-- <link rel="shortcut icon" type="image/x-icon" href="/assets/images/mads.ico">
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/main.css">
+        <link rel="stylesheet" href="/assets/css/main-custom.css">
+        <link rel="stylesheet" href="/assets/css/bootstrap.css">
+        <link rel="stylesheet" href="/assets/css/datepicker.css"> -->
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <!-- <script src="/assets/javascript/bootstrap.min.js"></script>
+        <script src="/assets/javascript/bootstrap-datepicker.js"></script>
+        <script src="/assets/javascript/main-custom.js"></script> -->
+        <%= stylesheet_link_tag "application", media: "all" %>
+        <%= javascript_include_tag "application" %>
+    </head>
+    <body ng-app="eshopApp" class="body-custom">
+    <nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">eShop</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="welcome">Home</a></li>
+					<li><a href="aboutUs"><b>About Us</b></a></li>
+                    <li><a href="clothing"><b>Shop for clothing</b></a></li>
+					<li><a href="footwears"><b>Shop for footwears</b></a></li>
+                    <li><a href="hats"><b>Shop for hats</b></a></li>
+                    <li><a href="storePickup"><b>store pick up products</b></a></li>
+                    <li><a href="contactUs"><b>Contact Us</b></a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome Guest</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container-fluid">
+        <h1>M&S e-Magazine</h1>
+        <h2 class="text-center">LUGGAGE & TRAVEL</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <a href="http://www.marksandspencer.com/scorpion-4-wheel-medium-suitcases/p/p22374300" >
+                    <%= image_tag("suitcase1.jpg", class: "img-responsive") %>
+                    <map name="Map" id="Map">
+                        <area shape="rect" coords="356,115,624,186" href="http://www.marksandspencer.com/scorpion-4-wheel-medium-suitcases/p/p22374300" alt="Shop now" />
+                    </map>
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <h3>Scorpion 4 Wheel Large Suitcase</h3>
+                <h5><p>Travel in style with our selection of luggage and travel accessories, 
+                    from sleek suitcases and rollercases to elegant leather holdalls for weekends away.</p>
+                    <br>
+                    Features:
+                    <br>It comes with 4 wheel rotation for ease of movement.
+                    100% plastic.
+                    Lining- 100% polyester.
+                    Easy to wipe clean.
+                    Zipped internal compartments.
+                    Also available in Large and Medium.
+                    Main body compartment is complete with PACKING STRAPS to keep your clothes secure whilst on the move
+                    This luggage is guaranteed for 5 years against faulty workmanship.
+                    <br>
+                    Notes:
+                    <br>Every airline has different guidelines on luggage size allowances 
+                    so please check with individual airlines for their regulations before travelling.
+                    This isn't expandable.
+                </h5>
+            </div>
         </div>
     </div>
-</div>
-    
-</body>
+	<!-- Modal -->
+	<div id="loginModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content" ng-controller="loginRegSHCtrl">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div id="loginHeader" ng-show="isVisible">
+						<h4 class="modal-title"><span class="glyphicon glyphicon-lock"></span> MADS Login</h4>
+						Are you a new user? <a href="#" ng-click="showHide()">Sign-Up</a>
+					</div>
+					<div id="registerHeader" ng-hide="isVisible">
+						<h4 class="modal-title"><span class="glyphicon glyphicon-lock"></span> MADS Register</h4>
+						Have you already registered? <a href="#" ng-click="showHide()">Sign-in</a>
+					</div>
+				</div>
+				<div class="modal-body" ng-show="isSelected">
+					 <form class="form-horizontal" role="form" ng-submit="elogin()">
+						<div class="form-group">
+							<label class="control-label col-sm-2 col-md-4" for="email"><span class="glyphicon glyphicon-user"></span> Username:</label>
+							<div class="col-sm-10 col-md-6">
+								<input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="email">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2 col-md-4" for="pwd"><span class="glyphicon glyphicon-eye-open"></span> Password:</label>
+							<div class="col-sm-10 col-md-6">
+								<input type="password" class="form-control" id="pwd" placeholder="Enter password" ng-model="password">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<div class="checkbox">
+									<label><input type="checkbox" ng-model="rememberMe"> Remember me</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-off"></span> Login</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-body" ng-hide="isSelected">
+					<form class="form-horizontal" role="form" ng-submit="elogin()">
+						<div class="form-group">
+							<label class="control-label col-sm-2 col-md-4" for="email"><span class="glyphicon glyphicon-user"></span> Email:</label>
+							<div class="col-sm-10 col-md-6">
+								<input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="email">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2 col-md-4" for="title"><span class="glyphicon glyphicon-user"></span> Title:</label>
+							<div class="col-sm-10 col-md-6">
+								<input type="text" class="form-control" id="title" placeholder="Select Title" ng-model="title">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2 col-md-4" for="firstName"><span class="glyphicon glyphicon-user"></span> First Name:</label>
+							<div class="col-sm-10 col-md-6">
+								<input type="text" class="form-control" id="firstName" placeholder="Enter First Name" ng-model="firstName">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2 col-md-4" for="lastName"><span class="glyphicon glyphicon-user"></span> Last Name:</label>
+							<div class="col-sm-10 col-md-6">
+								<input type="text" class="form-control" id="lastName" placeholder="Enter First Name" ng-model="lastName">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2 col-md-4" for="pwd"><span class="glyphicon glyphicon-eye-open"></span> Password:</label>
+							<div class="col-sm-10 col-md-6">
+								<input type="password" class="form-control" id="pwd" placeholder="Enter password" ng-model="password">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2 col-md-4" for="confpwd"><span class="glyphicon glyphicon-eye-open"></span> Confirm Password:</label>
+							<div class="col-sm-10 col-md-6">
+								<input type="password" class="form-control" id="confpwd" placeholder="Confirm password" ng-model="confPassword">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<div class="checkbox">
+									<label><input type="checkbox" ng-model="optIn"> Subscribe me for emails</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-off"></span> Login</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<span class="text-primary">In case of forgot password, please contact your administrator to reset it for you.</span>
+				</div>
+			</div>
+		</div>
+	</div>
+    </body>
 </html>
